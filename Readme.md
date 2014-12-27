@@ -1,17 +1,18 @@
-A panzer game
-
-Install
-=======
-
-```Bash
-gem install a_panzer
-```
+A. Panzer game
 
 Usage
 =====
 
-```Ruby
-CODE EXAMPLE
+```Bash
+gem install a-panzer
+```
+
+```Bash
+\
+|"""\-=
+(____)
+
+q=Quit r=Reset arrows=Move space=Shoot
 ```
 
 Author
@@ -19,4 +20,3 @@ Author
 [Michael Grosser](http://grosser.it)<br/>
 michael@grosser.it<br/>
 License: MIT<br/>
-[![Build Status](https://travis-ci.org/grosser/a_panzer.png)](https://travis-ci.org/grosser/a_panzer)
