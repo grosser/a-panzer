@@ -1,13 +1,17 @@
 PATH
   remote: .
   specs:
-    a_panzer (0.0.0)
+    a-panzer (0.0.0)
+      dispel (>= 0.0.7)
 
 GEM
   remote: https://rubygems.org/
   specs:
     bump (0.5.1)
+    curses (1.0.1)
     diff-lcs (1.2.5)
+    dispel (0.0.7)
+      curses
     rake (10.4.2)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
@@ -26,7 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  a_panzer!
+  a-panzer!
   bump
   rake
   rspec

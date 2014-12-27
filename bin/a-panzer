@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+
+require 'dispel'
+require 'a_panzer'
+
+def draw(ttt)
+  [*(ttt.board), status_line(ttt), "q=Quit r=Reset arrows=Move space=Shoot"].join("\n")
+end
+
+def status_line(game)
+  if game.pew?
+    "Pew!!!!"
+  elsif game.moving?
+    "*Rumble*"
+  else
+    ""
+  end
+end
+
+Dispel::Screen.open do |screen|
+  game = APanzer::Game.new
+  screen.draw draw(game)
+
+  Dispel::Keyboard.output timeout: 0.5 do |key|
+    case key
+    when :timeout then game.animate
+    when :right then game.move(1)
+    when :left then game.move(-1)
+    when " " then game.shoot
+    when "q", :"Ctrl+c" then break
+    when "r" then game = APanzer::Game.new
+    end
+    screen.draw draw(game)
+  end
+end
